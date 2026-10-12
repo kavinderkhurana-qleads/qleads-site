@@ -101,7 +101,7 @@
   .band .wrap{position:relative;z-index:2;}
   /* pricing */
   .price-card{background:linear-gradient(135deg,var(--ink3),#221a48);border:1px solid var(--line);border-radius:20px;padding:40px;max-width:560px;}
-  .price-row{display:flex;align-items:baseline;gap:6px;}
+  .price-row{display:flex;align-items:baseline;gap:0;}
   .price-cur{font-family:'Sora';font-size:24px;font-weight:600;color:var(--gold);}
   .price-amt{font-family:'Sora';font-size:64px;font-weight:700;color:#fff;line-height:1;}
   .price-per{font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin-top:6px;}
@@ -146,6 +146,9 @@
   .foot-col h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
   .foot-col a{display:block;color:var(--mute);font-size:14px;margin-bottom:9px;}
   .foot-col a:hover{color:#fff;}
+  .foot-col .foot-note{color:var(--mute);font-size:12.5px;opacity:.8;max-width:240px;margin-top:-4px;}
+  .rlink{text-decoration:underline;text-underline-offset:2px;}
+  .rlink:hover{color:#fff;}
   .foot-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;color:rgba(255,255,255,0.5);font-size:12.5px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;}
   /* sticky mobile register */
   .sticky-cta{position:fixed;left:14px;right:14px;bottom:14px;z-index:50;display:none;}
@@ -222,7 +225,7 @@
           <li>The full brief — <span>buyer's contact, area, budget, purpose, timeline</span></li>
           <li>Voice-verified stamp — <span>so you know it's real before you dial</span></li>
           <li>A 60-minute call window — <span>the buyer is expecting you</span></li>
-          <li>AED 500 is debited on delivery — <span>not genuine? Raise a dispute within 24h and we replace it</span></li>
+          <li>AED 500 is debited on delivery — <span>not genuine? Tap Raise dispute on the lead message within 24 hours and <a class="rlink" href="/terms#disputes" title="Disputes and replacement, Terms §5">we replace it</a></span></li>
         </ul>
       </div>
       <div class="phone">
@@ -248,7 +251,7 @@
               </div>
               <div class="m">Your 60-minute call window starts now. The buyer is expecting you.</div>
               <div class="m">AED 500 debited from your wallet (Lead ID Q-0042).</div>
-              <div class="m muted">To raise a dispute, reply with Lead ID Q-0042 within 24 hours.</div>
+              <div class="m muted">To raise a dispute, tap Raise dispute below within 24 hours.</div>
               <div class="wa-time">2:14 PM</div>
             </div>
             <div class="wa-btns">
@@ -273,14 +276,14 @@
     <div class="kicker">Simple, fair pricing</div>
     <h2 class="h2">One price. No surprises.</h2>
     <div class="price-card">
-      <div class="price-row"><span class="price-cur">AED</span><span class="price-amt">500</span></div>
+      <div class="price-row"><span class="price-cur">AED&nbsp;</span><span class="price-amt">500</span></div>
       <div class="price-per">per qualified lead</div>
       <ul class="price-list">
         <li>Exclusive to you — never shared</li>
         <li>Voice-verified buyer, expecting your call</li>
         <li>Full brief with budget, area &amp; context</li>
         <li>Prepaid wallet — top up in AED 500 steps; you only ever spend what you load</li>
-        <li>AED 500 debited on delivery — not genuine? Raise it within 24h and we replace it</li>
+        <li><span>AED 500 debited on delivery. Not genuine? Tap Raise dispute on the lead message within 24 hours and <a class="rlink" href="/terms#disputes" title="Disputes and replacement, Terms §5">we replace it</a></span></li>
       </ul>
       <span class="free-badge">Your first lead is free — no card required</span>
     </div>
@@ -315,7 +318,7 @@
       <details open><summary>What exactly is a Q-Lead?</summary><div class="a">A Dubai property buyer who has had a real WhatsApp conversation with AiSHA, had their budget, purpose and area confirmed, been voice-verified on a recorded call, and consented to speak with one specialist broker — you.</div></details>
       <details><summary>Are the leads really exclusive?</summary><div class="a">Yes. Every lead is delivered to one broker only and is never shared. There's no race to call first and no competing with other agents over the same buyer.</div></details>
       <details><summary>What does a lead cost?</summary><div class="a">AED 500 per qualified lead, and your very first lead is free — so you can judge the quality before paying anything. Paid leads come from a prepaid wallet you top up in AED 500 steps.</div></details>
-      <details><summary>What if a lead isn't genuine?</summary><div class="a">If a delivered lead doesn't match what was promised, raise it within 24 hours and we replace it. Every lead's voice verification is recorded and held for fair resolution.</div></details>
+      <details><summary>What if a lead isn't genuine?</summary><div class="a">If a delivered lead doesn't match what was promised, tap Raise dispute on the lead message within 24 hours (the Lead ID on the message identifies the lead) and <a class="rlink" href="/terms#disputes" title="Disputes and replacement, Terms §5">we replace it</a>. Every lead's voice verification is recorded and held for fair resolution.</div></details>
     </div>
     <a class="faq-link" href="/qleads-broker-faq.pdf" target="_blank" rel="noopener">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm0 2l4 4h-4V4zM8 13h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
@@ -368,10 +371,12 @@
         <h4>Platform</h4>
         <a href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker" target="_blank" rel="noopener">Register on WhatsApp</a>
         <a href="/qleads-broker-faq.pdf" target="_blank" rel="noopener">Broker FAQ (PDF)</a>
+        <a href="mailto:support@qleads.ai">Support: support@qleads.ai</a>
       </div>
       <div class="foot-col">
         <h4>Buyers</h4>
         <a href="https://askprop.ai" target="_blank" rel="noopener">Looking for property? Ask AiSHA →</a>
+        <p class="foot-note">AskProp is our buyer-side assistant.</p>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
