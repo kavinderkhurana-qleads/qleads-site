@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Top up your wallet — qleads.ai</title>
+<meta name="description" content="Top up your qleads.ai broker wallet by card. AED 500 per delivered lead; top up in multiples of AED 500." />
+<link rel="canonical" href="https://qleads.ai/topup" />
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<!-- s39/money-payment (5 Nov 2026): the website top-up entry (founder ruling 12: the payment link
+     is available on WhatsApp, on the website and by email). The card page lives on the payment
+     host below; it asks for the registered WhatsApp number and never shows a name or balance.
+     When the payment host moves to a qleads.ai domain, change the host in the two places it appears (card link, email form). -->
+<style>
+  :root{--ink:#0b1020;--ink2:#121a30;--gold:#FFC85A;--gold-d:#5a3a00;--wa:#25D366;--wa-d:#04391c;--mute:rgba(255,255,255,0.74);--line:rgba(255,255,255,0.1);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--gold);text-decoration:none;}
+  .bar{padding:18px 22px;border-bottom:1px solid var(--line);}
+  .logo{font-family:'Sora';font-weight:600;font-size:21px;color:#fff;} .logo b{color:var(--gold);}
+  main{max-width:720px;margin:0 auto;padding:46px 22px 70px;}
+  h1{font-family:'Sora';font-size:34px;font-weight:700;letter-spacing:-.02em;}
+  h2{font-family:'Sora';font-size:19px;font-weight:600;margin-top:34px;}
+  p,li{color:var(--mute);font-size:15.5px;}
+  p{margin-top:12px;}
+  .offer{margin-top:22px;border:1px solid rgba(255,200,90,.35);background:rgba(255,200,90,.06);border-radius:14px;padding:18px 20px;}
+  .offer strong{color:#fff;font-weight:500;}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;padding:13px 22px;border-radius:12px;}
+  .btn-gold{background:var(--gold);color:var(--gold-d);}
+  .btn-wa{background:var(--wa);color:var(--wa-d);}
+  ul{margin-top:12px;list-style:none;}
+  li{position:relative;padding-left:20px;margin-top:9px;}
+  li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  form{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;}
+  input{flex:1 1 220px;min-width:0;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--ink2);color:#fff;font-size:15px;}
+  button{padding:12px 18px;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-size:15px;cursor:pointer;}
+  footer{border-top:1px solid var(--line);padding:26px 22px;text-align:center;color:rgba(255,255,255,0.55);font-size:13px;}
+  footer a{margin:0 8px;}
+  @media (max-width:480px){h1{font-size:28px;}.btn{width:100%;justify-content:center;}}
+</style>
+</head>
+<body>
+<div class="bar"><a class="logo" href="/">q<b>leads</b>.ai</a></div>
+<main>
+  <h1>Top up your wallet</h1>
+  <p>For brokers registered with qleads.ai. Each Q-Lead is <strong style="color:#fff;font-weight:500">AED 500</strong>, debited from your prepaid wallet when the lead is delivered (prices exclude VAT). You are eligible for leads while your wallet holds AED 500.</p>
+
+  <div class="offer">
+    <p style="margin-top:0"><strong>Your first top-up:</strong> Your first top-up of AED 500 gets you 2 leads: the first is free, the second is paid from your AED 500. Not as described? Dispute within 24 hours and it is replaced free. For more leads, top up in multiples of AED 500.</p>
+    <p>The first AED 500 is a 2-lead starter pack: once your free lead has been delivered, that AED 500 is not refunded if you close your account. Any balance above it stays refundable, and credits never expire.</p>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-gold" href="https://aisha-webhook-production.up.railway.app/wallet" rel="noopener">Top up by card →</a>
+    <a class="btn btn-wa" href="https://wa.me/971501483346?text=WALLET" target="_blank" rel="noopener">Get my personal link on WhatsApp</a>
+  </div>
+  <p style="font-size:13.5px">The card page is secured by Stripe; you enter your registered WhatsApp number there. Your card details never touch our servers.</p>
+
+  <h2>Email me my personal link</h2>
+  <p>We'll send it to the email address on your broker account.</p>
+  <form method="post" action="https://aisha-webhook-production.up.railway.app/wallet/send-link">
+    <input type="tel" name="waNumber" placeholder="Registered WhatsApp number, e.g. 971501234567" autocomplete="tel" required />
+    <button type="submit">Email my link</button>
+  </form>
+
+  <h2>How your wallet works</h2>
+  <ul>
+    <li>AED 500 is debited per lead at delivery; you only ever spend what you load.</li>
+    <li>Top up in multiples of AED 500; credits never expire.</li>
+    <li>Not as described? Tap Raise dispute on the lead message within 24 hours and <a href="/terms#disputes">it is replaced free</a>.</li>
+    <li>Closing your account: your balance is refunded, except the AED 500 starter pack when your free lead was delivered and no paid lead followed.</li>
+    <li>A receipt is issued for every top-up.</li>
+  </ul>
+
+  <h2>Not registered yet?</h2>
+  <p>Registration is free and takes a few minutes on WhatsApp: <a href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker" target="_blank" rel="noopener">register with AiSHA</a>.</p>
+
+  <p style="margin-top:30px">Questions or refunds: <a href="mailto:support@qleads.ai">support@qleads.ai</a></p>
+</main>
+<footer>
+  <a href="/">Home</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a>
+</footer>
+</body>
+</html>
