@@ -239,32 +239,6 @@
   </div>
 </section>
 
-<!-- 7 ROI -->
-<section id="roi" class="bgimg bg-burj">
-  <div class="wrap roi">
-    <div>
-      <div class="head" style="margin-bottom:20px">
-        <span class="k">See your number</span>
-        <h2>What is one extra deal worth to you?</h2>
-        <p>Enter your own figures.</p>
-      </div>
-      <div class="inputs card">
-        <label>Typical property price (AED)<input id="price" type="number" value="2000000" min="0" step="50000" /></label>
-        <label>Your commission (%)<input id="comm" type="number" value="2" min="0" step="0.5" /></label>
-        <label>Plan
-          <select id="plan"><option value="300">Starter, AED 300</option><option value="1200" selected>Essential, AED 1,200</option><option value="2500">Professional, AED 2,500</option></select>
-        </label>
-      </div>
-    </div>
-    <div class="out">
-      <div>Commission from one extra deal</div>
-      <div class="v" id="v1">AED 40,000</div>
-      <p>That covers <b id="v2">33 months</b> of your plan.</p>
-            <a class="btn btn-gold" style="margin-top:18px" href="#trial">Try 7 Days Free</a>
-    </div>
-  </div>
-</section>
-
 <!-- 8 CUSTOM -->
 <section id="custom" class="bgimg bg-szr">
   <div class="wrap split">
@@ -354,7 +328,7 @@
     <span class="k">Ready when you are</span>
     <h2 style="margin:10px 0 14px">Your next buyer is already looking.</h2>
     <p>Give him an answer in his language, in seconds, under your name.</p>
-    <div class="ctas"><a class="btn btn-gold" href="#trial">Try 7 Days Free</a><a class="btn btn-line" href="#roi">See your number</a></div>
+    <div class="ctas"><a class="btn btn-gold" href="#trial">Try 7 Days Free</a><a class="btn btn-line" href="https://wa.me/971501483346?text=Demo">See a live demo on WhatsApp</a></div>
   </div>
 </section>
 
@@ -398,8 +372,7 @@
     document.getElementById('v1').textContent='AED '+v.toLocaleString('en-US');
     document.getElementById('v2').textContent=Math.floor(v/pl)+' months';
   }
-  ['price','comm','plan'].forEach(function(id){document.getElementById(id).addEventListener('input',roi)});
-  roi();
+  if(document.getElementById('price')){['price','comm','plan'].forEach(function(id){document.getElementById(id).addEventListener('input',roi)});roi();}
 })();
 </script>
 </body>
