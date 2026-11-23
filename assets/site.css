@@ -301,6 +301,13 @@ body{padding-bottom:64px}
 .plan .amt{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:34px}
 .plan .amt small{white-space:nowrap}
 .plan h3{margin-top:4px}
+/* hero and final band use the night photo: brighten it so the page reads white like the other sections (founder, 23 Nov) */
+.hero:before,.final:before,.bg-burj:before,.bg-burj2:before{filter:grayscale(1) invert(.08) brightness(1.9) contrast(.85)}
+.hero:after{background:linear-gradient(180deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.80) 55%,rgba(255,255,255,.62) 100%)}
+@media(min-width:960px){.hero:after{background:linear-gradient(90deg,#fff 0%,#fff 34%,rgba(255,255,255,.85) 46%,rgba(255,255,255,.35) 66%,rgba(255,255,255,.2) 100%)}}
+/* one even fade on every photo section */
+.bgimg:after{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.84) 60%,rgba(255,255,255,.8) 100%)}
+.bgimg:before{filter:grayscale(1) brightness(1.25) contrast(.9)}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
