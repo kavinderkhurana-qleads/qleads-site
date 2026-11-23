@@ -348,6 +348,13 @@ body{padding-bottom:64px}
 .bandbox h2{margin-top:0}
 /* hero text sits higher: top-aligned instead of centred against the tall phone (founder, 23 Nov) */
 @media(min-width:960px){.hero .wrap{align-items:center;min-height:0;padding-top:48px;padding-bottom:56px}}
+/* lighter white tint on photos (founder, 23 Nov) */
+.bgimg:after{background:linear-gradient(180deg,rgba(255,255,255,.84) 0%,rgba(255,255,255,.72) 60%,rgba(255,255,255,.66) 100%)}
+.bg-strong:after{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.76))}
+.trial:after{background:linear-gradient(90deg,rgba(255,255,255,.88),rgba(255,255,255,.66))}
+.final:after{background:rgba(255,255,255,.76)}
+.hero:after{background:linear-gradient(180deg,rgba(255,255,255,.25) 0%,rgba(255,255,255,.45) 45%,rgba(255,255,255,.85) 75%,#fff 100%)}
+@media(min-width:960px){.hero:after{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 40%,rgba(255,255,255,.7) 72%,rgba(255,255,255,.95) 90%),linear-gradient(90deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.25) 40%,rgba(255,255,255,.85) 52%,#fff 60%,#fff 100%)}}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
