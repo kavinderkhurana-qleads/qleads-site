@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/site.css?v=480c51c3" />
+<link rel="stylesheet" href="/assets/site.css?v=77360c54" />
 </head>
 <body>
 <header>
@@ -257,33 +257,26 @@
       <span class="k">7-day free trial</span>
       <h2>Try it free for 7 days.</h2>
       <p>We set up your WhatsApp number and AI agent. You pay nothing for 7 days. No card.</p>
-      <div class="two" style="margin-top:22px">
-        <div class="card"><b>Prefer to chat?</b><p>Ask our AI advisor anything.</p><a class="btn btn-wa" href="https://wa.me/971501483346?text=Demo">Chat on WhatsApp</a></div>
-        <div class="card"><b>Individual broker?</b><p>Register free in two minutes.</p><a class="btn btn-line" href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker">Register</a></div>
-      </div>
+      <p style="margin-top:22px"><b>Prefer to chat first?</b> Ask our AI advisor anything, or register as a broker in two minutes.</p>
+      <div class="alt"><a class="btn btn-wa" href="https://wa.me/971501483346?text=Demo">Chat on WhatsApp</a><a class="btn btn-line" href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker">Broker? Register free</a></div>
     </div>
     <form class="card" id="trialform">
-      <div class="seg" role="group" aria-label="I am">
-        <label><input type="radio" name="type" value="Agency" checked /> Agency</label>
-        <label><input type="radio" name="type" value="Developer" /> Developer</label>
-        <label><input type="radio" name="type" value="Individual broker" /> Broker</label>
-      </div>
-      <div class="seg" role="group" aria-label="Plan">
-        <label><input type="radio" name="plan" value="Starter" /> Starter</label>
-        <label><input type="radio" name="plan" value="Essential" checked /> Essential</label>
-        <label><input type="radio" name="plan" value="Professional" /> Professional</label>
-        <label><input type="radio" name="plan" value="Not sure" /> Not sure</label>
+      <div class="row2">
+        <label>I am<select name="type"><option>Agency</option><option>Developer</option><option value="Individual broker">Individual broker</option></select></label>
+        <label>Plan<select name="plan"><option>Starter</option><option selected>Essential</option><option>Professional</option><option>Not sure</option></select></label>
       </div>
       <div class="row2">
         <label>Your name<input name="name" placeholder="Full name" required /></label>
-        <label>Company<input name="company" placeholder="Agency or developer name" /></label>
+        <label>Company<input name="company" placeholder="Agency or developer" /></label>
       </div>
       <div class="row2">
         <label>Email<input name="email" type="email" placeholder="you@company.com" required /></label>
         <label>WhatsApp<input name="whatsapp" placeholder="+971" required /></label>
       </div>
-      <label>RERA office number (ORN)<input name="orn" placeholder="For agencies" /></label>
-      <label>What do you need? (optional)<textarea name="need" placeholder="Number of agents, projects, countries you want buyers from"></textarea></label>
+      <div class="row2">
+        <label>RERA office no. (optional)<input name="orn" placeholder="ORN" /></label>
+        <label>Anything to add? (optional)<input name="need" placeholder="Agents, projects, countries" /></label>
+      </div>
       <button class="btn btn-gold" type="submit">Start my free trial</button>
       <p class="fine" id="trialnote" style="display:none">Your email app has opened with your request. Press send, or write to support@qleads.ai.</p>
     </form>
