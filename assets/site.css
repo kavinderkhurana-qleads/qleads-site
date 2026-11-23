@@ -308,6 +308,21 @@ body{padding-bottom:64px}
 /* one even fade on every photo section */
 .bgimg:after{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.84) 60%,rgba(255,255,255,.8) 100%)}
 .bgimg:before{filter:grayscale(1) brightness(1.25) contrast(.9)}
+/* hero: Burj Khalifa moved behind the text on the left; phone stays on clean white (founder, 23 Nov) */
+.hero:before{left:0;right:auto;width:100%;background-position:center 18%}
+.hero:after{background:linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.78) 60%,rgba(255,255,255,.9) 100%)}
+@media(min-width:960px){
+  .hero:before{width:56%;background-size:cover;background-position:center 22%}
+  .hero:after{background:linear-gradient(90deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.70) 40%,rgba(255,255,255,.92) 52%,#fff 58%,#fff 100%)}
+}
+.hero:before{filter:grayscale(1) brightness(1.55) contrast(1.15)}
+.hero h1,.hero p.lead{text-shadow:0 1px 0 rgba(255,255,255,.6)}
+/* hero tuning: night photo shown as a light negative so the sky reads white and the tower dark; text area kept clear */
+.hero:before{filter:grayscale(1) invert(1) contrast(1.15) brightness(1.02)}
+.hero:after{background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,.92) 75%,#fff 100%)}
+@media(min-width:960px){
+  .hero:after{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.15) 40%,rgba(255,255,255,.85) 68%,#fff 85%),linear-gradient(90deg,rgba(255,255,255,.25) 0%,rgba(255,255,255,.35) 40%,rgba(255,255,255,.92) 52%,#fff 58%,#fff 100%)}
+}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
