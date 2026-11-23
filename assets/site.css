@@ -347,7 +347,7 @@ body{padding-bottom:64px}
 .hstep p{font-size:15.5px}
 .bandbox h2{margin-top:0}
 /* hero text sits higher: top-aligned instead of centred against the tall phone (founder, 23 Nov) */
-@media(min-width:960px){.hero .wrap{align-items:start;min-height:0;padding-top:56px;padding-bottom:72px}.hero .wrap>div:first-child{padding-top:24px}}
+@media(min-width:960px){.hero .wrap{align-items:center;min-height:0;padding-top:48px;padding-bottom:56px}}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
