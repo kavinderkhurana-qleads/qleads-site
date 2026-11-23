@@ -297,29 +297,40 @@
         <div class="card"><b>Individual broker?</b><p>Register free in two minutes.</p><a class="btn btn-line" href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker">Register</a></div>
       </div>
     </div>
-    <form class="card" onsubmit="return false">
+    <form class="card" id="trialform">
       <div class="seg" role="group" aria-label="I am">
-        <label><input type="radio" name="type" checked /> Agency</label>
-        <label><input type="radio" name="type" /> Developer</label>
+        <label><input type="radio" name="type" value="Agency" checked /> Agency</label>
+        <label><input type="radio" name="type" value="Developer" /> Developer</label>
+        <label><input type="radio" name="type" value="Individual broker" /> Broker</label>
       </div>
       <div class="seg" role="group" aria-label="Plan">
-        <label><input type="radio" name="plan" /> Starter</label>
-        <label><input type="radio" name="plan" checked /> Essential</label>
-        <label><input type="radio" name="plan" /> Professional</label>
-        <label><input type="radio" name="plan" /> Not sure</label>
+        <label><input type="radio" name="plan" value="Starter" /> Starter</label>
+        <label><input type="radio" name="plan" value="Essential" checked /> Essential</label>
+        <label><input type="radio" name="plan" value="Professional" /> Professional</label>
+        <label><input type="radio" name="plan" value="Not sure" /> Not sure</label>
       </div>
       <div class="row2">
-        <label>Your name<input placeholder="Full name" /></label>
-        <label>Company<input placeholder="Agency or developer name" /></label>
+        <label>Your name<input name="name" placeholder="Full name" required /></label>
+        <label>Company<input name="company" placeholder="Agency or developer name" /></label>
       </div>
       <div class="row2">
-        <label>Email<input type="email" placeholder="you@company.com" /></label>
-        <label>WhatsApp<input placeholder="+971" /></label>
+        <label>Email<input name="email" type="email" placeholder="you@company.com" required /></label>
+        <label>WhatsApp<input name="whatsapp" placeholder="+971" required /></label>
       </div>
-      <label>RERA office number (ORN)<input placeholder="For agencies" /></label>
-      <label>What do you need? (optional)<textarea placeholder="Number of agents, projects, countries you want buyers from"></textarea></label>
+      <label>RERA office number (ORN)<input name="orn" placeholder="For agencies" /></label>
+      <label>What do you need? (optional)<textarea name="need" placeholder="Number of agents, projects, countries you want buyers from"></textarea></label>
       <button class="btn btn-gold" type="submit">Start my free trial</button>
+      <p class="fine" id="trialnote" style="display:none">Your email app has opened with your request. Press send, or write to support@qleads.ai.</p>
     </form>
+    <script data-form>
+    document.getElementById('trialform').addEventListener('submit',function(e){
+      e.preventDefault();var f=e.target,g=function(n){var el=f.querySelector('[name="'+n+'"]:checked')||f.elements[n];return el?el.value:''};
+      var nl=String.fromCharCode(10);
+      var body=['Type: '+g('type'),'Plan: '+g('plan'),'Name: '+g('name'),'Company: '+g('company'),'Email: '+g('email'),'WhatsApp: '+g('whatsapp'),'ORN: '+g('orn'),'Needs: '+g('need')].join(nl);
+      location.href='mailto:support@qleads.ai?subject='+encodeURIComponent('Free trial request: '+(g('company')||g('name'))+' ('+g('plan')+')')+'&body='+encodeURIComponent(body);
+      document.getElementById('trialnote').style.display='block';
+    });
+    </script>
   </div>
 </section>
 
