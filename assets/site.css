@@ -327,6 +327,11 @@ body{padding-bottom:64px}
 .punch:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold-2);margin-right:10px;vertical-align:middle}
 #qleads .two .card{gap:6px}
 #qleads .amt{display:flex;align-items:baseline;gap:8px}
+.disc{margin-top:18px;display:grid;gap:14px;align-items:center}
+@media(min-width:960px){.disc{grid-template-columns:1fr 1fr auto}}
+.disc b{display:block;color:var(--black);font:700 16px 'Sora',sans-serif}
+.disc span{font-size:15px}
+.disc .acts{display:flex;flex-wrap:wrap;gap:10px}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
