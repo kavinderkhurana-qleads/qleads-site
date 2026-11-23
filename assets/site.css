@@ -339,6 +339,13 @@ body{padding-bottom:64px}
 .packs th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
 .packs td:first-child{color:var(--black);font-weight:600}
 .disc button.btn{font-family:'Inter',sans-serif}
+.how3{display:grid;gap:18px;position:relative}
+@media(min-width:960px){.how3{grid-template-columns:repeat(3,1fr)}.how3:before{content:"";position:absolute;top:44px;left:16%;right:16%;border-top:2px dashed var(--gold-2);z-index:0}}
+.hstep{position:relative;z-index:1;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow);text-align:center}
+.hnum{width:36px;height:36px;margin:0 auto 14px;border-radius:50%;background:var(--gold-2);color:var(--black);display:grid;place-items:center;font:800 16px 'Sora',sans-serif;box-shadow:0 0 0 6px #fff}
+.hstep h3{font-size:19px;margin-bottom:8px}
+.hstep p{font-size:15.5px}
+.bandbox h2{margin-top:0}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
