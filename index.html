@@ -260,7 +260,8 @@
       <p style="margin-top:22px"><b>Prefer to chat first?</b> Ask our AI advisor anything, or register as a broker in two minutes.</p>
       <div class="alt"><a class="btn btn-wa" href="https://wa.me/971501483346?text=Demo">Chat on WhatsApp</a><a class="btn btn-line" href="https://wa.me/971501483346?text=I%27d%20like%20to%20register%20as%20a%20qleads%20broker">Broker? Register free</a></div>
     </div>
-    <form class="card" id="trialform">
+    <form class="card" id="trialform" method="post" action="https://aisha-webhook-production.up.railway.app/enterprise/trial">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <div class="row2">
         <label>I am<select name="type"><option>Agency</option><option>Developer</option><option value="Individual broker">Individual broker</option></select></label>
         <label>Plan<select name="plan"><option>Starter</option><option selected>Essential</option><option>Professional</option><option>Not sure</option></select></label>
@@ -278,17 +279,7 @@
         <label>Anything to add? (optional)<input name="need" placeholder="Agents, projects, countries" /></label>
       </div>
       <button class="btn btn-gold" type="submit">Start my free trial</button>
-      <p class="fine" id="trialnote" style="display:none">Your email app has opened with your request. Press send, or write to support@qleads.ai.</p>
     </form>
-    <script data-form>
-    document.getElementById('trialform').addEventListener('submit',function(e){
-      e.preventDefault();var f=e.target,g=function(n){var el=f.querySelector('[name="'+n+'"]:checked')||f.elements[n];return el?el.value:''};
-      var nl=String.fromCharCode(10);
-      var body=['Type: '+g('type'),'Plan: '+g('plan'),'Name: '+g('name'),'Company: '+g('company'),'Email: '+g('email'),'WhatsApp: '+g('whatsapp'),'ORN: '+g('orn'),'Needs: '+g('need')].join(nl);
-      location.href='mailto:support@qleads.ai?subject='+encodeURIComponent('Free trial request: '+(g('company')||g('name'))+' ('+g('plan')+')')+'&body='+encodeURIComponent(body);
-      document.getElementById('trialnote').style.display='block';
-    });
-    </script>
   </div>
 </section>
 
