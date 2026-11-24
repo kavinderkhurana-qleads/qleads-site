@@ -385,3 +385,13 @@ body{padding-bottom:64px}
 .brief div{padding:6px 0;border-top:1px dashed var(--line)}
 .brief div:first-child{border-top:none}
 .brief b{display:inline-block;min-width:150px;color:var(--black)}
+
+.doc .tw{overflow-x:auto;margin-top:14px}
+.doc table{border-collapse:collapse;width:100%;font-size:15px}
+.doc th,.doc td{border:1px solid var(--line);padding:9px 12px;text-align:left;color:var(--body)}
+.doc th{background:var(--gold-soft);color:var(--black);font-weight:600}
+.doc .cards3{display:grid;gap:16px;margin-top:22px}
+@media(min-width:720px){.doc .cards3{grid-template-columns:repeat(3,1fr)}}
+.doc .cards3 a{display:block;border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;background:#fff;box-shadow:var(--shadow)}
+.doc .cards3 a b{display:block;color:var(--black);font-size:18px;margin-bottom:6px}
+.doc .cards3 a span{color:var(--body);font-weight:400;font-size:15px}
