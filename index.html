@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/site.css?v=5042824d" />
+<link rel="stylesheet" href="/assets/site.css?v=5dafae64" />
 </head>
 <body>
 <header>
@@ -245,6 +245,7 @@
         <span class="chip">Marketing campaigns</span><span class="chip">AI emailing</span><span class="chip">AI voice calling</span>
         <span class="chip">CRM integration and dashboards</span><span class="chip">Listings and content</span><span class="chip">Website chat and other channels</span>
       </div>
+      <p style="margin-top:22px"><a class="btn btn-gold" id="quotebtn" href="#trial">Request a quote</a></p>
     </div>
     <div class="photo"></div>
   </div>
@@ -264,7 +265,7 @@
       <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
       <div class="row2">
         <label>I am<select name="type"><option>Agency</option><option>Developer</option><option value="Individual broker">Individual broker</option></select></label>
-        <label>Plan<select name="plan"><option>Starter</option><option selected>Essential</option><option>Professional</option><option>Not sure</option></select></label>
+        <label>Plan<select name="plan" id="planpick"><option>Starter</option><option selected>Essential</option><option>Professional</option><option>Not sure</option><option value="Custom">Custom AI solution</option></select></label>
       </div>
       <div class="row2">
         <label>Your name<input name="name" placeholder="Full name" required /></label>
@@ -278,7 +279,16 @@
         <label>RERA office no. (optional)<input name="orn" placeholder="ORN" /></label>
         <label>Anything to add? (optional)<input name="need" placeholder="Agents, projects, countries" /></label>
       </div>
-      <button class="btn btn-gold" type="submit">Start my free trial</button>
+      <fieldset id="wants" class="wants" hidden>
+        <legend>What would you like a quote for?</legend>
+        <label><input type="checkbox" name="want" value="Marketing campaigns" /> Marketing campaigns</label>
+        <label><input type="checkbox" name="want" value="AI emailing" /> AI emailing</label>
+        <label><input type="checkbox" name="want" value="AI voice calling" /> AI voice calling</label>
+        <label><input type="checkbox" name="want" value="CRM integration and dashboards" /> CRM integration and dashboards</label>
+        <label><input type="checkbox" name="want" value="Listings and content" /> Listings and content</label>
+        <label><input type="checkbox" name="want" value="Website chat and other channels" /> Website chat and other channels</label>
+      </fieldset>
+      <button class="btn btn-gold" type="submit" id="trialsubmit">Start my free trial</button>
     </form>
   </div>
 </section>
@@ -350,6 +360,15 @@
     document.getElementById('v2').textContent=Math.floor(v/pl)+' months';
   }
   if(document.getElementById('price')){['price','comm','plan'].forEach(function(id){document.getElementById(id).addEventListener('input',roi)});roi();}
+})();
+(function(){
+  var pick=document.getElementById('planpick'),wants=document.getElementById('wants'),btn=document.getElementById('trialsubmit'),q=document.getElementById('quotebtn');
+  if(!pick||!wants||!btn)return;
+  function sync(){var c=pick.value==='Custom';wants.hidden=!c;btn.textContent=c?'Request a quote':'Start my free trial';
+    if(!c){[].forEach.call(wants.querySelectorAll('input'),function(x){x.checked=false});}}
+  pick.addEventListener('change',sync);
+  if(q)q.addEventListener('click',function(){pick.value='Custom';sync();});
+  sync();
 })();
 </script>
 </body>
