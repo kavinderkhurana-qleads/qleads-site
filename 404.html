@@ -5,23 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Page not found | Qleads</title>
 <meta name="description" content="This page does not exist." />
-<link rel="canonical" href="https://qleads.ai/404" />
+<link rel="canonical" href="https://www.qleads.ai/404" />
 <meta property="og:title" content="Page not found | Qleads" />
 <meta property="og:description" content="This page does not exist." />
-<meta property="og:url" content="https://qleads.ai/404" />
-<meta property="og:image" content="https://qleads.ai/assets/img/hero-dubai-desktop.jpg" />
+<meta property="og:url" content="https://www.qleads.ai/404" />
+<meta property="og:image" content="https://www.qleads.ai/assets/img/hero-dubai-desktop.jpg" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/site.css?v=5dafae64" />
+<link rel="stylesheet" href="/assets/site.css?v=2cda2708" />
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <a class="logo" href="/">q<b>leads</b>.ai</a>
-    <nav class="links">
+    <nav class="links" id="sitenav">
       <a href="/#how">How it works</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#qleads">Q-Leads</a>
@@ -34,6 +34,7 @@
         <option value="en">EN</option><option disabled>العربية (soon)</option><option disabled>Русский (soon)</option><option disabled>हिन्दी (soon)</option><option disabled>Français (soon)</option>
       </select>
       <a class="btn btn-gold btn-sm" href="/#trial">Try 7 Days Free</a>
+      <button class="menu-btn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="sitenav"><svg class="m" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
 </header>
@@ -50,5 +51,18 @@
     <div class="legal">© 2026 qleads.ai, Middle East Integrated Technologies FZ-LLC, Ras Al Khaimah Economic Zone (RAKEZ), UAE. Licence No. 47035238. Reg. No. 0000004093293.</div>
   </div>
 </footer>
+<script>
+/* menu:start */
+(function(){
+  var b=document.getElementById('menubtn'),n=document.getElementById('sitenav');
+  if(!b||!n)return;
+  var h=b.closest('header');
+  function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  n.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});
+})();
+/* menu:end */
+</script>
 </body>
 </html>

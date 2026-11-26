@@ -366,6 +366,20 @@ body{padding-bottom:64px}
 .trial .wants input{width:18px;height:18px;margin:0;flex:none}
 @media(min-width:600px){.trial .wants{grid-template-columns:1fr 1fr}}
 @media(min-width:960px){.trial .wrap{align-items:center}}
+/* phone menu and anchor offset under the sticky header (26 Nov) */
+html{scroll-padding-top:80px}
+.menu-btn{display:inline-flex;flex:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #d9d2c1;border-radius:12px;background:#fff;color:var(--black);cursor:pointer;padding:0}
+.menu-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.menu-btn .x{display:none}
+header.open .menu-btn .x{display:block}
+header.open .menu-btn .m{display:none}
+@media(min-width:960px){.menu-btn{display:none}}
+@media(max-width:959px){
+  header.open .links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(0,0,0,.10);padding:6px 16px 12px;max-height:calc(100vh - 140px);overflow-y:auto}
+  header.open .links a{display:block;padding:13px 4px;font-size:16px;font-weight:500;color:var(--black);border-top:1px solid var(--line)}
+  header.open .links a:first-child{border-top:none}
+}
+@media(max-width:539px){.right .lang{display:none}}
 
 /* content pages (top-up, privacy, terms, brokers, 404) */
 .pagehead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
