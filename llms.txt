@@ -39,6 +39,8 @@ Qleads serves real estate in the United Arab Emirates.
 
 - Home, plans and FAQ: https://www.qleads.ai/
 - For individual brokers: https://www.qleads.ai/brokers
+- For brokerage agencies: https://www.qleads.ai/agencies
+- For real estate developers: https://www.qleads.ai/developers
 - Top up wallet: https://www.qleads.ai/topup
 - Terms for individual brokers: https://www.qleads.ai/terms-brokers
 - Terms for agencies: https://www.qleads.ai/terms-agencies

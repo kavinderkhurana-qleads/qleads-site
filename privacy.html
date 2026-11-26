@@ -9,13 +9,23 @@
 <meta property="og:title" content="Privacy Policy | Qleads" />
 <meta property="og:description" content="How qleads.ai collects, uses and protects personal data." />
 <meta property="og:url" content="https://www.qleads.ai/privacy" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Qleads" />
+<meta property="og:locale" content="en_AE" />
 <meta property="og:image" content="https://www.qleads.ai/assets/img/hero-dubai-desktop.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="2878" />
+<meta property="og:image:alt" content="The Burj Khalifa and Downtown Dubai at night" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy Policy | Qleads" />
+<meta name="twitter:description" content="How qleads.ai collects, uses and protects personal data." />
+<meta name="twitter:image" content="https://www.qleads.ai/assets/img/hero-dubai-desktop.jpg" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/site.css?v=3a3c35d6" />
+<link rel="stylesheet" href="/assets/site.css?v=e5dbb4d6" />
 </head>
 <body>
 <header>
@@ -26,13 +36,14 @@
       <a href="/#pricing">Pricing</a>
       <a href="/#qleads">Q-Leads</a>
       <a href="/#custom">Custom AI</a>
-      <a href="/brokers">For brokers</a>
+      <div class="dd">
+        <button class="dd-btn" id="whobtn" type="button" aria-expanded="false" aria-controls="wholist">Who it's for<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></button>
+        <span class="dd-label">Who it's for</span>
+        <div class="dd-list" id="wholist"><a href="/brokers">Brokers</a><a href="/agencies">Agencies</a><a href="/developers">Developers</a></div>
+      </div>
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="right">
-      <select class="lang" aria-label="Language">
-        <option value="en">EN</option><option disabled>العربية (soon)</option><option disabled>Русский (soon)</option><option disabled>हिन्दी (soon)</option><option disabled>Français (soon)</option>
-      </select>
       <a class="btn btn-gold btn-sm" href="/#trial">Try 7 Days Free</a>
       <button class="menu-btn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="sitenav"><svg class="m" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
@@ -81,7 +92,7 @@
     <div class="fcols">
       <div><a class="logo" href="/">q<b>leads</b>.ai</a><p style="margin-top:10px">AI integrated services for marketing campaigns, lead generation and lead qualification for real estate in the UAE.</p></div>
       <div><h4>Product</h4><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#qleads">Q-Leads</a><a href="/#custom">Custom AI solutions</a><a href="/#faq">FAQ</a></div>
-      <div><h4>For you</h4><a href="/#pricing">Agencies</a><a href="/#pricing">Developers</a><a href="/brokers">Individual brokers</a><a href="/topup">Top up wallet</a></div>
+      <div><h4>For you</h4><a href="/agencies">Agencies</a><a href="/developers">Developers</a><a href="/brokers">Individual brokers</a><a href="/topup">Top up wallet</a></div>
       <div><h4>Company</h4><a href="mailto:support@qleads.ai">support@qleads.ai</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></div>
     </div>
     <div class="legal">© 2026 qleads.ai, Middle East Integrated Technologies FZ-LLC, Ras Al Khaimah Economic Zone (RAKEZ), UAE. Licence No. 47035238. Reg. No. 0000004093293.</div>
@@ -97,6 +108,16 @@
   b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
   n.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){set(false);b.focus();}});
+})();
+(function(){
+  var w=document.getElementById('whobtn'),l=document.getElementById('wholist');
+  if(!w||!l)return;
+  var d=w.parentNode;
+  function set(o){d.classList.toggle('open',o);w.setAttribute('aria-expanded',o?'true':'false');}
+  w.addEventListener('click',function(){set(w.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('click',function(e){if(!d.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&w.getAttribute('aria-expanded')==='true'){set(false);w.focus();}});
 })();
 /* menu:end */
 </script>
