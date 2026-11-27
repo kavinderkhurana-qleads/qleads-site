@@ -20,7 +20,7 @@ Qleads is run by Middle East Integrated Technologies FZ-LLC, Ras Al Khaimah Econ
 - Professional plan: AED 2,500 a month
 - Volume discounts on Q-Leads and Q-Buyers: 10% off at 10 a month, 15% at 15, 20% at 20.
 - Q-Leads and Q-Buyers are paid from a prepaid wallet. The first top-up is AED 500, then any amount in AED 100 steps. Credits never expire.
-- Starter is billed monthly, with no minimum term. Essential and Professional are billed quarterly in advance, with a 3-month minimum after the trial.
+- Starter is billed monthly. Essential and Professional are billed quarterly in advance. Every plan has a 3-month minimum after the trial.
 - WhatsApp charges are included in the plans.
 
 ## Free trial
