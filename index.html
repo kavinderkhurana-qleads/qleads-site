@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Qleads: Real buyers for real estate in the UAE</title>
+<title>Qleads | AI buyers for UAE real estate</title>
 <meta name="description" content="AI integrated services for marketing campaigns, lead generation and lead qualification for individual brokers, brokerage agencies and real estate developers in the UAE." />
 <link rel="canonical" href="https://www.qleads.ai/" />
-<meta property="og:title" content="Qleads: Real buyers for real estate in the UAE" />
+<meta property="og:title" content="Qleads | AI buyers for UAE real estate" />
 <meta property="og:description" content="AI integrated services for marketing campaigns, lead generation and lead qualification for individual brokers, brokerage agencies and real estate developers in the UAE." />
 <meta property="og:url" content="https://www.qleads.ai/" />
 <meta property="og:type" content="website" />
@@ -17,15 +17,15 @@
 <meta property="og:image:height" content="2878" />
 <meta property="og:image:alt" content="The Burj Khalifa and Downtown Dubai at night" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Qleads: Real buyers for real estate in the UAE" />
+<meta name="twitter:title" content="Qleads | AI buyers for UAE real estate" />
 <meta name="twitter:description" content="AI integrated services for marketing campaigns, lead generation and lead qualification for individual brokers, brokerage agencies and real estate developers in the UAE." />
 <meta name="twitter:image" content="https://www.qleads.ai/assets/img/hero-dubai-desktop.jpg" />
 <meta name="theme-color" content="#ffffff" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.svg?v=q1" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/site.css?v=e5dbb4d6" />
+<link rel="stylesheet" href="/assets/site.css?v=b19611b6" />
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -517,9 +517,10 @@
       </div>
       <div class="row2">
         <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
-        <label>Company<input name="company" autocomplete="organization" placeholder="Company name" /></label>
+        <label>Company<input name="company" autocomplete="organization" placeholder="Company name, or your own" required /></label>
       </div>
-      <label>I am<select name="type"><option>Individual broker</option><option>Brokerage agency</option><option>Developer</option></select></label>
+      <label>Which best describes you?<select name="who" class="who" required><option value="" selected disabled>Choose one</option><option>Individual broker (trial for myself)</option><option>Agency owner or director</option><option>Agency manager or team leader</option><option>Agent at an agency</option><option>Developer</option><option>Marketing or admin staff</option><option>Other</option></select></label>
+      <label class="whoother" hidden>Please describe<input name="who_other" maxlength="120" placeholder="Your role and company type" /></label>
       <fieldset class="wants">
         <legend>What would you like a quote for?</legend>
         <label><input type="checkbox" name="want" value="Marketing campaigns" /> Marketing campaigns</label>
@@ -528,7 +529,9 @@
         <label><input type="checkbox" name="want" value="CRM integration and dashboards" /> CRM integration and dashboards</label>
         <label><input type="checkbox" name="want" value="Listings and content" /> Listings and content</label>
         <label><input type="checkbox" name="want" value="Website chat and other channels" /> Website chat and other channels</label>
+        <label><input type="checkbox" name="want" value="Other" class="wantother" /> Other</label>
       </fieldset>
+      <label class="wantotherbox" hidden>Please describe what you need<input name="want_other" maxlength="300" placeholder="What would you like us to build?" /></label>
       <button class="btn btn-gold" type="submit">Request a quote</button>
     </form>
   </div>
@@ -552,12 +555,11 @@
       </div>
       <div class="row2">
         <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
-        <label>Company<input name="company" autocomplete="organization" placeholder="Company name" /></label>
+        <label>Company<input name="company" autocomplete="organization" placeholder="Company name, or your own" required /></label>
       </div>
-      <div class="row2">
-        <label>I am<select name="type"><option>Individual broker</option><option>Brokerage agency</option><option>Developer</option></select></label>
-        <label>Plan<select name="plan"><option>Starter</option><option selected>Essential</option><option>Professional</option></select></label>
-      </div>
+      <label>Which best describes you?<select name="who" class="who" required><option value="" selected disabled>Choose one</option><option>Individual broker (trial for myself)</option><option>Agency owner or director</option><option>Agency manager or team leader</option><option>Agent at an agency</option><option>Developer</option><option>Marketing or admin staff</option><option>Other</option></select></label>
+      <label class="whoother" hidden>Please describe<input name="who_other" maxlength="120" placeholder="Your role and company type" /></label>
+      <label>Plan<select name="plan" required><option value="" selected disabled>Choose a plan</option><option>Starter</option><option>Essential</option><option>Professional</option></select></label>
       <button class="btn btn-gold" type="submit">Start my free trial</button>
     </form>
   </div>
@@ -660,6 +662,21 @@
   if(!bar||!c||!('IntersectionObserver' in window))return;
   bar.classList.add('off');
   new IntersectionObserver(function(es){bar.classList.toggle('off',es[es.length-1].isIntersecting);},{rootMargin:'-66px 0px 0px 0px'}).observe(c);
+})();
+(function(){
+  // forms: "Other" opens a text box that must then be filled; the quote form needs at least one tick
+  [].forEach.call(document.querySelectorAll('form.qform'),function(f){
+    var sel=f.querySelector('select.who'),box=f.querySelector('.whoother'),inp=box&&box.querySelector('input');
+    function who(){var o=sel&&sel.value==='Other';if(box){box.hidden=!o;inp.required=o;}}
+    if(sel){sel.addEventListener('change',who);who();}
+    var ot=f.querySelector('.wantother'),ob=f.querySelector('.wantotherbox'),oi=ob&&ob.querySelector('input');
+    function want(){if(ob){ob.hidden=!ot.checked;oi.required=ot.checked;}}
+    if(ot){ot.addEventListener('change',want);want();}
+    var boxes=f.querySelectorAll('input[name="want"]');
+    if(boxes.length){f.addEventListener('submit',function(e){
+      if(![].some.call(boxes,function(b){return b.checked;})){e.preventDefault();boxes[0].setCustomValidity('Please tick at least one.');boxes[0].reportValidity();}
+    });[].forEach.call(boxes,function(b){b.addEventListener('change',function(){boxes[0].setCustomValidity('');});});}
+  });
 })();
 </script>
 </body>

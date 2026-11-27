@@ -358,7 +358,7 @@ body{padding-bottom:64px}
 .qform select{font:16px 'Inter',sans-serif;padding:12px 14px;border:1px solid #ddd5c3;border-radius:10px;background:#fff;color:var(--black);width:100%}
 form.qform{gap:12px;padding:24px}
 .qform .wants{border:1px solid #ddd5c3;border-radius:10px;padding:12px 14px;margin:0;display:grid;gap:8px}
-.qform .wants[hidden]{display:none}
+.qform .wants[hidden],.qform label[hidden]{display:none}
 .qform .wants legend{font-size:14px;font-weight:600;color:var(--black);padding:0 6px}
 .qform .wants label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--black)}
 .qform .wants input{width:18px;height:18px;margin:0;flex:none}
